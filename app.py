@@ -96,7 +96,7 @@ chart_data = pd.DataFrame(
 
 ## 4.3 Map Chart
 df = pd.DataFrame(
-    np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+    np.random.randn(1000, 2) / [50, 50] + [-5.1232, 120.2513],
     columns=['lat', 'lon']
 )
 
