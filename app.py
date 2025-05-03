@@ -5,14 +5,17 @@ import numpy as np
 import requests
 
 # 1 ELEMEN TEXT
-st.title("My App HermantoXYZ" )
-st.video("https://www.youtube.com/watch?v=QK4BVh2aSAA")
-st.header("Aplikasi Streamlit App - Ini Header")
-st.subheader("Aplikasi Streamlit App - Ini Subheader")
-st.caption("Aplikasi Streamlit App - Ini Caption")
-st.code("import numpy as np")
-st.text("Aplikasi Streamlit App - Ini Text")
-st.latex(r'x^2 + y^2 = z^2')
+st.title("Aplikasiku Ces" )
+st.video("https://www.youtube.com/watch?v=VqLdt2LkW64&pp=ygUOdGltb3RoeSByb25hbGQ%3D")
+st.header("Bitcoin to the Moon")
+st.subheader("Saya :")
+st.caption("NAMA = NUR ALIM")
+st.caption("NIM = 240907501030")
+st.caption("KELAS = B / 24")
+st.code("import string as ammo")
+st.text("Rumus :")
+st.latex('einstein' r'E=mc²')
+st.latex('Satoshi' r'1 BTC = 1 BTC')
 st.divider()
 st.markdown("Aplikasi Streamlit App - Ini Markdown")
 
