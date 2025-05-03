@@ -14,10 +14,10 @@ st.caption("NIM = 240907501030")
 st.caption("KELAS = B / 24")
 st.code("import string as ammo")
 st.text("Rumus :")
-st.latex('einstein' r'E=mc²')
-st.latex('Satoshi' r'1 BTC = 1 BTC')
+st.latex('einstein  ' r'E=mc²')
+st.latex('Satoshi  ' r'1 BTC = 1 BTC')
 st.divider()
-st.markdown("Aplikasi Streamlit App - Ini Markdown")
+st.markdown(" Ini Bagian Markdown")
 
 # 2 DATAFRAME INPUT
 # 2.1 API 
@@ -31,7 +31,7 @@ if response.status_code == 200:
     st.dataframe(df)
 else:
     print(f"Error: {response.status_code}")
-    st.error("datanya gagal di fetch dari API")
+    st.error("gagalki di fetch datanya dari API")
 
 st.subheader("Lembar Kerja Belajar Upload CSV")
 
@@ -41,14 +41,14 @@ if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
     st.dataframe(df)
 else:
-    st.write("No file uploaded yet")
+    st.write("Ndd file ta upload")
 
 # 2.3 Simple Data
 st.subheader("Lembar Kerja Belajar Simple Data")
 data = {
-    'Name': ['Alice', 'Bob', 'Charlie'],
-    'Age': [25, 30, 35],
-    'City': ['New York', 'London', 'Paris']
+    'Name': ['Lim', 'Pati', 'pazel'],
+    'Age': [18, 20, 19],
+    'City': ['Sinjai', 'Batua Raya', 'Ablam']
 }
 
 df = pd.DataFrame(data)
@@ -59,7 +59,7 @@ st.subheader("Lembar Kerja Belajar Simple Data 2")
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.metric("Temperature", "70 °F", "1.2 °F")
+    st.metric(label="BTC",value= "$96k", delta="0,2%")
 
 with col2:
     st.metric("Wind Speed", "10 mph", "-8%")
