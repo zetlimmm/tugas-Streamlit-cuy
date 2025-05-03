@@ -4,6 +4,24 @@ import pandas as pd
 import numpy as np
 import requests
 
+# Menambahkan elemen navigasi dengan dropdown di Sidebar
+st.sidebar.header("Navigasi")
+selection = st.sidebar.selectbox("Pilih Halaman", ["Beranda", "Tentang", "Galeri", "Kontak"])
+
+# Konten berdasarkan pilihan
+if selection == "Beranda":
+    st.title("Beranda")
+    st.write("Ini adalah halaman beranda.")
+elif selection == "Tentang":
+    st.title("Tentang")
+    st.write("Ini adalah halaman tentang.")
+elif selection == "Galeri":
+    st.title("Galeri")
+    st.write("Ini adalah halaman galeri.")
+else:
+    st.title("Kontak")
+    st.write("Ini adalah halaman kontak.")
+
 # 1 ELEMEN TEXT
 st.title("Aplikasiku Ces" )
 st.video("https://www.youtube.com/watch?v=VqLdt2LkW64&pp=ygUOdGltb3RoeSByb25hbGQ%3D")
@@ -54,30 +72,27 @@ data = {
 df = pd.DataFrame(data)
 st.dataframe(df)
 
-st.subheader("Lembar Kerja Belajar Simple Data 2")
+st.subheader("Price Market")
 # 3 Metrix Streamlit
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.metric(label="BTC",value= "$96k", delta="0,2%")
+    st.metric("BTC", "$96k", "0,2%")
 
 with col2:
-    st.metric("Wind Speed", "10 mph", "-8%")
+    st.metric("XAU", "$3k", "0.1%")
 
 with col3:
-    st.metric("Humidity", "60%", "4%")
+    st.metric("SOL", "$148", "0.1%")
 
 # 4 CHARTS
 ## 4.1 LINE CHART
 
-st.subheader("Lembar Kerja CHARTS")
+st.subheader("Chart")
 chart_data = pd.DataFrame(
     np.random.randn(50, 3),
     columns=['a', 'b', 'c']
 )
-
-st.line_chart(chart_data)
-st.bar_chart(chart_data, color=['#ff0000', '#00ff00', '#0000ff'])
 
 ## 4.3 Map Chart
 df = pd.DataFrame(
@@ -88,19 +103,17 @@ df = pd.DataFrame(
 st.map(df)
 
 # 5 INPUT FORM
-
-
-st.subheader("Lembar Kerja Belajar Form Input")
+st.subheader("Form Input")
 with st.form("my_form"):
-    name = st.text_input("Name", placeholder="Enter your name")
-    alamat = st.text_area("Alamat", placeholder="Enter your address")
+    name = st.text_input("Name", placeholder="Kasih masuk nama ta")
+    alamat = st.text_area("Alamat", placeholder="Kasih masuk alamat ta")
     usia = st.slider("Usia", 0, 100, 25)
     tanggal_lahir = st.date_input("Tanggal Lahir")
-    warna_favorit = st.color_picker("Warna Favorit")
+    warna_favorit = st.color_picker("Warna Kesukaan ta")
     foto_kamera = st.camera_input("Foto Kamera")
     rating = st.slider("Rating", 1, 5, 3)
-    jenis_kelamin = st.radio("Jenis Kelamin", ["Laki-laki", "Perempuan"])
-    hobi = st.multiselect("Hobi", ["Membaca", "Menulis", "Menggambar", "Mengaji"])
+    jenis_kelamin = st.radio("Jenis Kelamin", ["cwk", "cwk"])
+    hobi = st.multiselect("Hobi", ["Membantu Sesama", "Pabusur", "Mencuri"])
     submitted = st.form_submit_button("Submit")
     if submitted:
         st.write(f"Name: {name}")
@@ -110,73 +123,3 @@ with st.form("my_form"):
 
 if submitted:
     st.success("Form submitted!")
-
-# Upload Media di Streamlit video
-st.subheader("Lembar Kerja Belajar Upload Media yt")
-st.video("https://www.youtube.com/watch?v=QK4BVh2aSAA")
-# st.video('.video.mp4')
-
-st.subheader("Lembar Kerja Belajar Upload Media mp3")
-# st.audio('.audio.mp3')
-
-
-# Menambahkan elemen navigasi di Sidebar
-st.sidebar.header("Navigasi")
-selection = st.sidebar.radio("Pilih Halaman", ["Beranda", "Tentang", "Kontak"])
-
-# Konten berdasarkan pilihan
-if selection == "Beranda":
-    st.title("Beranda")
-    st.write("Ini adalah halaman beranda.")
-elif selection == "Tentang":
-    st.title("Tentang")
-    st.write("Ini adalah halaman tentang.")
-else:
-    st.title("Kontak")
-    st.write("Ini adalah halaman kontak.")
-
-# Menambahkan elemen navigasi dengan dropdown di Sidebar
-st.sidebar.header("Navigasi")
-selection = st.sidebar.selectbox("Pilih Halaman", ["Beranda", "Tentang", "Galeri", "Kontak"])
-
-# Konten berdasarkan pilihan
-if selection == "Beranda":
-    st.title("Beranda")
-    st.write("Ini adalah halaman beranda.")
-elif selection == "Tentang":
-    st.title("Tentang")
-    st.write("Ini adalah halaman tentang.")
-elif selection == "Galeri":
-    st.title("Galeri")
-    st.write("Ini adalah halaman galeri.")
-else:
-    st.title("Kontak")
-    st.write("Ini adalah halaman kontak.")
-
-# Menambahkan tombol untuk navigasi di Sidebar
-st.sidebar.header("Navigasi")
-if st.sidebar.button("Beranda"):
-    st.title("Beranda")
-    st.write("Ini adalah halaman beranda.")
-elif st.sidebar.button("Tentang"):
-    st.title("Tentang")
-    st.write("Ini adalah halaman tentang.")
-elif st.sidebar.button("Kontak"):
-    st.title("Kontak")
-    st.write("Ini adalah halaman kontak.")
-
-# Menambahkan tautan navigasi di Sidebar
-st.sidebar.header("Navigasi")
-st.sidebar.markdown("[Beranda](#beranda)")
-st.sidebar.markdown("[Tentang](#tentang)")
-st.sidebar.markdown("[Kontak](#kontak)")
-
-# Konten halaman berdasarkan tautan
-st.title("Beranda")
-st.write("Ini adalah halaman beranda.")
-
-st.title("Tentang")
-st.write("Ini adalah halaman tentang.")
-
-st.title("Kontak")
-st.write("Ini adalah halaman kontak.")  
