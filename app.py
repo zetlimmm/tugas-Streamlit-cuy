@@ -25,7 +25,7 @@ else:
 # 1 ELEMEN TEXT
 st.title("Aplikasiku Ces" )
 st.video("https://www.youtube.com/watch?v=VqLdt2LkW64&pp=ygUOdGltb3RoeSByb25hbGQ%3D")
-st.header("Bitcoin to the Moon")
+st.header("Bitcoin to the Future")
 st.subheader("Saya :")
 st.caption("NAMA = NUR ALIM")
 st.caption("NIM = 240907501030")
@@ -120,6 +120,9 @@ with st.form("my_form"):
         st.write(f"Alamat: {alamat}")
         st.write(f"Usia: {usia}")
         st.write(f"Tanggal Lahir: {tanggal_lahir}")
+        if foto_kamera is not None:
+            st.image(foto_kamera, caption='Foto Anda', use_column_width=True)
+        st.write(f"Hobi: {hobi}")
 
 if submitted:
     st.success("Form submitted!")
